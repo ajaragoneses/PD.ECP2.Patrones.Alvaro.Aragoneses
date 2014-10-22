@@ -1,4 +1,4 @@
-package singleton.factory.test;
+package es.upm.miw.pd.singleton.factory.test;
 
 import es.upm.miw.pd.singleton.factory.FactoryReferences;
 
