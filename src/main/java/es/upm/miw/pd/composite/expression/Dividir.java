@@ -1,6 +1,6 @@
 package es.upm.miw.pd.composite.expression;
 
-public class Dividir extends ExpresionBinaria{
+public class Dividir extends ExpresionBinaria {
 
 	public Dividir(Expresion ex_1, Expresion ex_2){
 		this.operando_1 = ex_1;
