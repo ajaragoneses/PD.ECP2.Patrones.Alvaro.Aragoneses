@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class FactoryReferences {
     private Map<String, Integer> references;
-
     private int reference;
+    private static FactoryReferences factory;
 
-    public FactoryReferences() {
+    private FactoryReferences() {
         this.references = new HashMap<>();
         this.reference = 0;
     }
@@ -26,5 +26,12 @@ public class FactoryReferences {
     public void removeReference(String key) {
         this.references.remove(key);
     }
+
+	public static FactoryReferences getFactory() {
+		if(FactoryReferences.factory == null){
+			FactoryReferences.factory = new FactoryReferences();
+		}
+		return FactoryReferences.factory;
+	}
 
 }
