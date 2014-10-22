@@ -1,44 +1,44 @@
 package es.upm.miw.pd.state.connection.connection.states;
 
+import es.upm.miw.pd.state.connection.connection.Conexion;
 import es.upm.miw.pd.state.connection.connection.Estado;
 import es.upm.miw.pd.state.connection.connection.EstadoAbs;
 
 public class EstadoParado extends EstadoAbs {
 
+	public EstadoParado(Conexion context){
+		this.context = context;
+		this.estado = Estado.PARADO;
+	}
+	
 	@Override
 	public void abrir() {
-		// TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Acción no permitida... ");
 
 	}
 
 	@Override
 	public void cerrar() {
-		// TODO Auto-generated method stub
-
+        throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void parar() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void iniciar() {
-		// TODO Auto-generated method stub
-
+		this.context.setEstado(new EstadoPreparado(this.context));
 	}
 
 	@Override
 	public void enviar(String msg) {
-		// TODO Auto-generated method stub
-
+        throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void recibir(int respuesta) {
-		// TODO Auto-generated method stub
-
+        throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 }
