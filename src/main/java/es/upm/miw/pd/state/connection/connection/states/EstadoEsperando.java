@@ -13,37 +13,35 @@ public class EstadoEsperando extends EstadoAbs {
 	
 	@Override
 	public void abrir() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void cerrar() {
-		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void parar() {
-		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void iniciar() {
-		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void enviar(String msg) {
-		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Acción no permitida... ");
 
 	}
 
 	@Override
 	public void recibir(int respuesta) {
-		// TODO Auto-generated method stub
-
+		if (respuesta == 0) {
+            this.context.setEstado(new EstadoPreparado(this.context));
+        } else {
+        	this.context.setEstado(new EstadoCerrado(this.context));
+        }
 	}
 }
