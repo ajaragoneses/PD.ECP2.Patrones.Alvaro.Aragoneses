@@ -1,5 +1,7 @@
 package es.upm.miw.pd.composite.expression;
 
-public class Expresion {
+public abstract class Expresion {
+
+	public abstract int operar();
 
 }
