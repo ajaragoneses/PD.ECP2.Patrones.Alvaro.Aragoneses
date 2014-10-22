@@ -1,10 +1,16 @@
 package es.upm.miw.pd.state.connection.connection.states;
 
+import es.upm.miw.pd.state.connection.connection.Conexion;
 import es.upm.miw.pd.state.connection.connection.Estado;
 import es.upm.miw.pd.state.connection.connection.EstadoAbs;
 
 public class EstadoEsperando extends EstadoAbs {
 
+	public EstadoEsperando(Conexion context){
+		this.context = context;
+		this.estado = Estado.ESPERANDO;
+	}
+	
 	@Override
 	public void abrir() {
 		// TODO Auto-generated method stub
@@ -40,11 +46,4 @@ public class EstadoEsperando extends EstadoAbs {
 		// TODO Auto-generated method stub
 
 	}
-
-	@Override
-	public Estado getEstado() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

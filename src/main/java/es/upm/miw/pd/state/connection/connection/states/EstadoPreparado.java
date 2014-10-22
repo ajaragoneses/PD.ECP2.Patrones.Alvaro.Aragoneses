@@ -1,9 +1,14 @@
 package es.upm.miw.pd.state.connection.connection.states;
 
+import es.upm.miw.pd.state.connection.connection.Conexion;
 import es.upm.miw.pd.state.connection.connection.Estado;
 import es.upm.miw.pd.state.connection.connection.EstadoAbs;
 
 public class EstadoPreparado extends EstadoAbs {
+
+	public EstadoPreparado(Conexion context) {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void abrir() {
@@ -40,11 +45,4 @@ public class EstadoPreparado extends EstadoAbs {
 		// TODO Auto-generated method stub
 
 	}
-
-	@Override
-	public Estado getEstado() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

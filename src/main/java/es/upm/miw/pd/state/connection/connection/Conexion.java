@@ -1,14 +1,16 @@
 package es.upm.miw.pd.state.connection.connection;
 
+import es.upm.miw.pd.state.connection.connection.states.EstadoCerrado;
+
 public class Conexion {
-    private Estado estado;
+    private EstadoAbs estado;
 
     private Link link;
 
     public Conexion(Link link) {
         assert link != null;
         this.link = link;
-        this.estado = Estado.CERRADO;
+        this.estado = new EstadoCerrado(this);
     }
 
     public Link getLink() {
@@ -16,7 +18,11 @@ public class Conexion {
     }
 
     public Estado getEstado() {
-        return this.estado;
+        return this.estado.getEstado();
+    }
+    
+    public void setEstado(EstadoAbs est) {
+        this.estado = est;
     }
 
     public void abrir() {

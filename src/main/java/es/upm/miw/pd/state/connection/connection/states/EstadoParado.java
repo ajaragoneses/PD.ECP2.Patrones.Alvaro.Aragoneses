@@ -41,10 +41,4 @@ public class EstadoParado extends EstadoAbs {
 
 	}
 
-	@Override
-	public Estado getEstado() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
