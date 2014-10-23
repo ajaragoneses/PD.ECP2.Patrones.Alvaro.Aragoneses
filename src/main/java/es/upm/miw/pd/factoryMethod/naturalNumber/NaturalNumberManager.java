@@ -1,6 +1,5 @@
-package es.upm.miw.pd.factoryMethod;
+package es.upm.miw.pd.factoryMethod.naturalNumber;
 
-import es.upm.miw.pd.factoryMethod.naturalNumber.NaturalNumber;
 
 public class NaturalNumberManager {
 
