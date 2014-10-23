@@ -7,42 +7,37 @@ import es.upm.miw.pd.state.connection.connection.EstadoAbs;
 public class EstadoPreparado extends EstadoAbs {
 
 	public EstadoPreparado(Conexion context) {
-		// TODO Auto-generated constructor stub
+		this.context = context;
+		this.estado = Estado.PREPARADO;
 	}
 
 	@Override
 	public void abrir() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void cerrar() {
-		// TODO Auto-generated method stub
-
+		this.context.setEstado(new EstadoCerrado(this.context));
 	}
 
 	@Override
 	public void parar() {
-		// TODO Auto-generated method stub
-
+		this.context.setEstado(new EstadoParado(this.context));
 	}
 
 	@Override
 	public void iniciar() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void enviar(String msg) {
-		// TODO Auto-generated method stub
-
+		this.context.getLink().enviar(msg);
+		this.context.setEstado(new EstadoEsperando(this.context));
 	}
 
 	@Override
 	public void recibir(int respuesta) {
-		// TODO Auto-generated method stub
-
+        throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 }
