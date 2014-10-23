@@ -26,82 +26,27 @@ public class Conexion {
     }
 
     public void abrir() {
-        if (this.estado == Estado.CERRADO) {
-            this.estado = Estado.PREPARADO;
-        } else if (this.estado == Estado.PARADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PREPARADO) {
-        } else if (this.estado == Estado.ESPERANDO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else
-            assert false : "estado imposible";
+        this.estado.abrir();
     }
 
     public void cerrar() {
-        if (this.estado == Estado.CERRADO) {
-        } else if (this.estado == Estado.PARADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PREPARADO) {
-            this.estado = Estado.CERRADO;
-        } else if (this.estado == Estado.ESPERANDO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        }
-        assert false : "estado imposible";
+        this.estado.cerrar();
     }
 
     public void parar() {
-        if (this.estado == Estado.CERRADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PARADO) {
-        } else if (this.estado == Estado.PREPARADO) {
-            this.estado = Estado.PARADO;
-        } else if (this.estado == Estado.ESPERANDO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        }
-        assert false : "estado imposible";
+    	this.estado.parar();
     }
 
     public void iniciar() {
-        if (this.estado == Estado.CERRADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PARADO) {
-            this.estado = Estado.PREPARADO;
-        } else if (this.estado == Estado.PREPARADO) {
-        } else if (this.estado == Estado.ESPERANDO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        }
-        assert false : "estado imposible";
+       this.estado.iniciar();
     }
 
     public void enviar(String msg) {
-        if (this.estado == Estado.CERRADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PARADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PREPARADO) {
-            this.link.enviar(msg);
-            this.estado = Estado.ESPERANDO;
-        } else if (this.estado == Estado.ESPERANDO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        }
-        assert false : "estado imposible";
+        this.estado.enviar(msg);
     }
 
     public void recibir(int respuesta) {
-        if (this.estado == Estado.CERRADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PARADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.PREPARADO) {
-            throw new UnsupportedOperationException("Acción no permitida... ");
-        } else if (this.estado == Estado.ESPERANDO) {
-            if (respuesta == 0) {
-                this.estado = Estado.PREPARADO;
-            } else {
-                this.estado = Estado.CERRADO;
-            }
-        }
-        assert false : "estado imposible";
+        this.estado.recibir(respuesta);
     }
 
 }

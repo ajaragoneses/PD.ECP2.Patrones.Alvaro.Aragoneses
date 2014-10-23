@@ -13,6 +13,7 @@ public class EstadoEsperando extends EstadoAbs {
 	
 	@Override
 	public void abrir() {
+		throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
