@@ -19,7 +19,7 @@ public class MainCalculadora {
         this.gestor.add(new ComandoImprimir(calc));
         // --- MEMENTABLE ---
         this.gestor.add(new ComandoGuardar(calc));
-        //this.gestor.add(new ComandoDeshacer(calc));
+        this.gestor.add(new ComandoDeshacer(calc));
     }
 
     public void ejecutar() {

@@ -2,7 +2,7 @@ package es.upm.miw.pd.command.calculadora.solution.memento;
 
 import es.upm.miw.pd.command.calculadora.Calculadora;
 
-public class CalculadoraMementable extends Calculadora implements Mementable{
+public class CalculadoraMementable extends Calculadora implements Mementable {
 
 	@Override
 	public void crearMemento(String key) {
@@ -11,8 +11,9 @@ public class CalculadoraMementable extends Calculadora implements Mementable{
 	}
 
 	@Override
-	public void restaurarMemento(MementoCalculadora m) {
-		
+	public void restaurarMemento(String key) {
+		MementoCalculadora m = GestorMementosCalculadora.getInstance().getMemento(key);
+		this.setTotal(m.getTotal());
 	}
 
 }

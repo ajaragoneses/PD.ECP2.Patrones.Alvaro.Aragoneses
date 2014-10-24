@@ -1,12 +1,15 @@
 package es.upm.miw.pd.command.calculadora.solution.memento;
 
+import upm.jbb.IO;
 import es.upm.miw.pd.command.calculadora.Calculadora;
 import es.upm.miw.pd.command.calculadora.solution.Comando;
 
 public class ComandoDeshacer implements Comando {
 
-	public ComandoDeshacer(Calculadora calc) {
-		// TODO Auto-generated constructor stub
+	private CalculadoraMementable calc;
+	
+	public ComandoDeshacer(CalculadoraMementable calc) {
+		this.calc = calc;
 	}
 
 	@Override
@@ -16,7 +19,8 @@ public class ComandoDeshacer implements Comando {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
+		String key = (String) IO.in.read(String.class, "Introduce el nombre del punto de guardado a restaurar");
+		this.calc.restaurarMemento(key);
 	}
 
 }
